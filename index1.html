@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Playlist</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        /* Animasi background gradasi yang berubah-ubah */
+        @keyframes gradientBackground {
+            0% {
+                background: linear-gradient(45deg, #ff1493, #a1c4fd); /* Pink Hot & Biru Pastel */
+            }
+            25% {
+                background: linear-gradient(45deg, #ffb6c1, #87cefa); /* Pink Pastel & Biru Pastel */
+            }
+            50% {
+                background: linear-gradient(45deg, #ff69b4, #1e90ff); /* Pink Normal & Biru Hot */
+            }
+            75% {
+                background: linear-gradient(45deg, #ff1493, #1e90ff); /* Pink Hot & Biru Hot */
+            }
+            100% {
+                background: linear-gradient(45deg, #ffb6c1, #a1c4fd); /* Pink Pastel & Biru Pastel */
+            }
+        }
+
+        /* Animasi bergerak dari bawah ke atas untuk teks */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi bergerak untuk tombol */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CSS untuk Body */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            animation: gradientBackground 15s infinite; /* Durasi 15 detik untuk perubahan background */
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* CSS untuk Kontainer */
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CSS untuk Header */
+        .header {
+            font-size: 32px;
+            font-family: 'Great Vibes', cursive;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0.5s forwards;
+        }
+
+        /* CSS untuk Header 1 */
+        .header1 {
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1s forwards;
+        }
+        .subheader {
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+
+        /* CSS untuk Tombol */
+        .button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 30px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: slideIn 1s ease-in-out forwards;
+        }
+
+        /* CSS untuk Icon di Tombol */
+        .button i {
+            margin-right: 10px;
+        }
+
+        /* Efek Hover pada Tombol */
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Youtube Button */
+        .youtube {
+            background-color: #FF0000;
+            animation: fadeIn 1s ease-in-out 1s forwards;
+        }
+
+        /* Spotify Button */
+        .spotify {
+            background-color: #1DB954;
+            animation: fadeIn 1s ease-in-out 1.5s forwards;
+        }
+
+        /* Instagram Button */
+        .instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            animation: fadeIn 2s ease-in-out 2s forwards;
+        }
+
+        /* Github Button */
+        .github {
+            background-color: #333;
+            position: relative;
+            animation: fadeIn 2s ease-in-out 2.5s forwards;
+        }
+
+        /* Footer */
+        .footer {
+            font-size: 14px;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 3s forwards;
+        }
+
+        /* Video Input */
+        .video-input {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 0s forwards;
+        }
+
+        /* Keyframes FadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop id="video-input" width="100%" height="300">
+            <source src="SO CUTE FINAL EDIT.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header">
+            Happy Birthday Wulan!!
+        </div>
+        <div class="header1">
+            Ada Playlist Khusus Buat Kamu Nih
+        </div>
+        <a href="https://youtube.com/playlist?list=PLFfbUINR_y2gcMzVy9PotB1hzAL-pZPoX&si=QoaDTVs4emEWqYit" class="button youtube" target="_blank">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+        <a href="https://open.spotify.com/playlist/2kvp1ucp1uwAiAcQ5fiozK?si=29ca291f65cb4946" class="button spotify" target="_blank">
+            <i class="fab fa-spotify"></i> Spotify
+        </a>
+        <div class="subheader">
+            Owh Iyaa, ini cara cepat mengunjungi<br>
+            web & filter yg sudah saya buat
+        </div>
+        <a href="https://www.instagram.com/ar/873279044945648/?ch=MzAwZThkMjEzMTRiODU2MWJkMjA0NzQ3Zjk2MDAzZDU%3D" class="button instagram" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <div class="button github">
+            <a href="https://pemula211.github.io/Birthday-Ulan-3/" style="color: white; text-decoration: none;" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        <div class="footer">
+            Semoga Bahagia, senang, dan sehat selaluuu 
+            dan kita bisa menjadi teman dekat/sahabat 
+        </div>
+    </div>
+</body>
+</html>
